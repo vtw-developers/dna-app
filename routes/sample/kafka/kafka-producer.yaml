@@ -1,0 +1,10 @@
+- route:
+    autoStartup: true
+    id: "sample-kafka-producer"
+    from:
+      uri: "timer:timer-sample-kafka-producer?period=5s"
+      steps:
+        - setBody:
+            constant: '{"id": 1, "name": "우태진"}'
+        - to: "kafka:sample-001?brokers=localhost:9092"
+        - log: Kafka 송신 성공! ${body}

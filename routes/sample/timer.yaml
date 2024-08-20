@@ -1,4 +1,5 @@
 - route:
+    autoStartup: false
     id: "sample-timer"
     from:
       uri: "timer:sample-timer?period=5s"

@@ -1,0 +1,7 @@
+- route:
+    autoStartup: true
+    id: "sample-kafka-consumer"
+    from:
+      uri: "kafka:sample-001?brokers=localhost:9092"
+      steps:
+        - log: Kafka 수신 성공! ${body}

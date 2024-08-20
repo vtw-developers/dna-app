@@ -9,5 +9,6 @@ spring:
 camel:
   main:
     routes-include-pattern: "file:routes/**/*.yaml"
+    shutdown-timeout: 1
   rest:
     binding-mode: json

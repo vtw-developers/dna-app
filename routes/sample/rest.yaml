@@ -5,6 +5,7 @@
       to:
         uri: "direct:sample-rest"
 - route:
+    autoStartup: false
     id: "sample-rest-direct"
     from:
       uri: "direct:sample-rest"
