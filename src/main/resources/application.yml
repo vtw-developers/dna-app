@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: dna-app
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/portal
+    username: vtw
+    password: vtw123#
+camel:
+  main:
+    routes-include-pattern: "file:routes/**/*.yml"

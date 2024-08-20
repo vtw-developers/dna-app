@@ -1,0 +1,6 @@
+- route:
+    id: "sample-timer"
+    from:
+      uri: "timer:sample-timer?period=5s"
+      steps:
+        - log: 안녕 세계야!!! 지금 시각은 ${date:now:yyyy-MM-dd HH:mm:ss}
