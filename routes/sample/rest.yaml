@@ -1,0 +1,16 @@
+- rest:
+    id: "sample-rest"
+    get:
+    - path: "/sample-rest"
+      to:
+        uri: "direct:sample-rest"
+- route:
+    id: "sample-rest-direct"
+    from:
+      uri: "direct:sample-rest"
+      steps:
+        - setBody:
+            constant: '{"id": 1, "name": "우태진"}'
+        - unmarshal:
+            json: {}
+        - log: Rest response completed! ${body}

@@ -8,4 +8,6 @@ spring:
     password: vtw123#
 camel:
   main:
-    routes-include-pattern: "file:routes/**/*.yml"
+    routes-include-pattern: "file:routes/**/*.yaml"
+  rest:
+    binding-mode: json
