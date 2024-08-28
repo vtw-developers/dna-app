@@ -1,11 +1,12 @@
 - rest:
     id: "sample-rest-log"
     get:
-    - path: "/sample-rest-log"
+    - id: "sample-rest-log"
+      path: "/sample-rest-log"
       to:
         uri: "direct:sample-rest-log"
 - route:
-    autoStartup: true
+    autoStartup: false
     id: "sample-rest-log-direct"
     from:
       uri: "direct:sample-rest-log"

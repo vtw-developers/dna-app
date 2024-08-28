@@ -1,0 +1,7 @@
+- templateId: temp1
+  flowId: Api2
+  parameters:
+    id: 2
+    name: 홍길동
+    age: 86
+

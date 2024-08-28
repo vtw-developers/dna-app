@@ -1,0 +1,14 @@
+- route:
+    autoStartup: true
+    id: "Template_OpenApi"
+    from:
+      uri: "direct:Template_OpenApi"
+      steps:
+        - process:
+            ref: templateParametersToVariableProcessor
+        - log: ${variable.DnaTemplateParameters}
+        - setBody:
+            constant: '{"id": 1, "name": "우태진"}'
+        - unmarshal:
+            json: {}
+        - log: Rest response completed! ${body}

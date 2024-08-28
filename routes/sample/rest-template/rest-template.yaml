@@ -1,8 +1,10 @@
 - rest:
     get:
-    - path: "/sample-rest-001"
+    - id: "sample-rest-001"
+      path: "/sample-rest-001"
       to: "direct:sample-rest-template-route-1"
-    - path: "/sample-rest-002"
+    - id: "sample-rest-002"
+      path: "/sample-rest-002"
       to: "direct:sample-rest-template-route-2"
 
 - route-template:
@@ -19,24 +21,24 @@
         - unmarshal:
             json: {}
 
-- templated-route:
-    route-id: sample-rest-template-route-1
-    route-template-ref: sample-rest-template-direct
-    parameters:
-      - name: routeId
-        value: sample-rest-template-route-1
-      - name: id
-        value: 1
-      - name: name
-        value: 우태진
-
-- templated-route:
-    route-id: sample-rest-template-route-2
-    route-template-ref: sample-rest-template-direct
-    parameters:
-      - name: routeId
-        value: sample-rest-template-route-2
-      - name: id
-        value: 2
-      - name: name
-        value: 우태진
+#- templated-route:
+#    route-id: sample-rest-template-route-1
+#    route-template-ref: sample-rest-template-direct
+#    parameters:
+#      - name: routeId
+#        value: sample-rest-template-route-1
+#      - name: id
+#        value: 1
+#      - name: name
+#        value: 우태진
+#
+#- templated-route:
+#    route-id: sample-rest-template-route-2
+#    route-template-ref: sample-rest-template-direct
+#    parameters:
+#      - name: routeId
+#        value: sample-rest-template-route-2
+#      - name: id
+#        value: 2
+#      - name: name
+#        value: 우태진

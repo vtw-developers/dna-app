@@ -1,5 +1,5 @@
 - route:
-    autoStartup: true
+    autoStartup: false
     id: "sample-kafka-consumer"
     from:
       uri: "kafka:sample-001?brokers=localhost:9092"
