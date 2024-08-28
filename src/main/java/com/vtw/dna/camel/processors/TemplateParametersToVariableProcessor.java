@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-@Component
+@Component("TemplateParametersToVariableProcessor")
 public class TemplateParametersToVariableProcessor implements Processor {
 
     @Override

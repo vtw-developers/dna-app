@@ -4,8 +4,13 @@
     from:
       uri: "direct:Template_OpenApi"
       steps:
+        - onCompletion:
+            steps:
+              - process:
+                  ref: ApiLogSaveProcessor
+        - to: "direct:ApiKeyCheck"
         - process:
-            ref: templateParametersToVariableProcessor
+            ref: TemplateParametersToVariableProcessor
         - log: ${variable.DnaTemplateParameters}
         - setBody:
             constant: '{"id": 1, "name": "우태진"}'

@@ -42,6 +42,7 @@ dependencies {
     implementation 'org.apache.camel.springboot:camel-jacksonxml-starter'
     implementation 'org.apache.camel.springboot:camel-platform-http-starter'
     implementation 'org.apache.camel.springboot:camel-opentelemetry-starter'
+    implementation 'org.apache.camel.springboot:camel-sql-starter'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'io.micrometer:micrometer-registry-prometheus'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
