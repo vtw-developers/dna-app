@@ -1,5 +1,5 @@
 dna:
-  template-parameters-directory: "C:\\Develop\\Projects\\dna-app\\template"
+  template-parameters-directory: "C:\\Develop\\Projects\\dna-app\\meta\\templated"
 spring:
   application:
     name: dna-app
@@ -12,7 +12,7 @@ camel:
   variable:
     test: aaaa
   main:
-    routes-include-pattern: "file:routes/**/*.yaml"
+    routes-include-pattern: "file:meta/**/*.camel.yaml"
     shutdown-timeout: 1
   rest:
     binding-mode: json
