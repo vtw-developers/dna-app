@@ -1,3 +1,5 @@
+dna:
+  template-parameters-directory: "C:\\Develop\\Projects\\dna-app\\template"
 spring:
   application:
     name: dna-app
