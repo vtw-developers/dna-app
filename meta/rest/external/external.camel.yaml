@@ -1,0 +1,33 @@
+- rest:
+    path: external
+    get:
+    - id: External_Api1
+      path: api-1
+      to: direct:DirectExternalApi1
+    - id: External_Api2
+      path: api-2
+      to: direct:DirectExternalApi2
+
+- route:
+    autoStartup: true
+    id: DirectExternalApi1
+    from:
+      uri: "direct:DirectExternalApi1"
+      steps:
+        - setBody:
+            simple: '{"id": "external1", "name": "external1"}'
+        - unmarshal:
+            json: {}
+        - log: External response completed! ${body}
+
+- route:
+    autoStartup: true
+    id: DirectExternalApi2
+    from:
+      uri: "direct:DirectExternalApi2"
+      steps:
+        - setBody:
+            simple: '{"id": "external2", "name": "external2"}'
+        - unmarshal:
+            json: {}
+        - log: External response completed! ${body}

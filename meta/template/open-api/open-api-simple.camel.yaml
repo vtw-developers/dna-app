@@ -1,0 +1,19 @@
+- route:
+    autoStartup: true
+    id: "Template_OpenApi_Simple"
+    from:
+      uri: "direct:Template_OpenApi_Simple"
+      steps:
+        - onCompletion:
+            steps:
+              - process:
+                  ref: ApiLogSaveProcessor
+        - to: "direct:ApiKeyCheck"
+        - process:
+            ref: TemplateParametersToVariableProcessor
+        - log: ${variable.DnaTemplateParameters}
+        - setBody:
+            simple: '{"id": ${variable.id}, "name": "${variable.name}"}'
+        - unmarshal:
+            json: {}
+        - log: Rest response completed! ${body}

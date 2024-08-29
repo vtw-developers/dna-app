@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-@RequiredArgsConstructor
 @Configuration
 public class CamelConfiguration {
 

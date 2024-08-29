@@ -16,8 +16,6 @@ camel:
     shutdown-timeout: 1
   rest:
     binding-mode: json
-  routetemplate:
-    config:
 management:
   security:
     enabled: false

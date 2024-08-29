@@ -1,0 +1,8 @@
+- templateId: temp1
+  flowId: Api4
+  parameters:
+    id: 2
+    name: 홍길동
+    age: 86
+    relay:
+      url: "http://localhost:8080/external/api-2?bridgeEndpoint=true"

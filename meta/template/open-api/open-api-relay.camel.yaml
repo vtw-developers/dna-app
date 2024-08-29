@@ -1,8 +1,8 @@
 - route:
     autoStartup: true
-    id: "Template_OpenApi"
+    id: "Template_OpenApi_Relay"
     from:
-      uri: "direct:Template_OpenApi"
+      uri: "direct:Template_OpenApi_Relay"
       steps:
         - onCompletion:
             steps:
@@ -11,9 +11,7 @@
         - to: "direct:ApiKeyCheck"
         - process:
             ref: TemplateParametersToVariableProcessor
-        - log: ${variable.DnaTemplateParameters}
-        - setBody:
-            constant: '{"id": 1, "name": "우태진"}'
+        - toD: "${variable.relay[url]}"
         - unmarshal:
             json: {}
         - log: Rest response completed! ${body}
