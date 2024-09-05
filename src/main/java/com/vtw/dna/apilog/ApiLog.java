@@ -1,4 +1,4 @@
-package com.vtw.dna.camel;
+package com.vtw.dna.apilog;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,7 +15,7 @@ public class ApiLog {
     private String messageId;
     private String flowId;
     private LocalDateTime timestamp;
-    private ServiceResult result;
+    private ApiResult result;
     private String errorCode;
     private String errorMessage;
     private String flowName;

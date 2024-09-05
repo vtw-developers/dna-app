@@ -1,0 +1,11 @@
+# API 키 검사
+- route:
+    autoStartup: true
+    id: ApiKeyCheck
+    from:
+      uri: "direct:ApiKeyCheck"
+      steps:
+        - log: API 키 검사 시작
+        - process:
+            ref: ApiKeyCheckProcessor
+        - log: API 키 검사 성공

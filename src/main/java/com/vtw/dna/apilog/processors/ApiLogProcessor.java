@@ -1,7 +1,7 @@
-package com.vtw.dna.camel.processors;
+package com.vtw.dna.apilog.processors;
 
-import com.vtw.dna.camel.ApiLog;
-import com.vtw.dna.camel.ServiceResult;
+import com.vtw.dna.apilog.ApiLog;
+import com.vtw.dna.apilog.ApiResult;
 import org.apache.camel.Exchange;
 import org.apache.camel.MessageHistory;
 import org.apache.camel.Processor;
@@ -21,12 +21,12 @@ public class ApiLogProcessor implements Processor {
         LocalDateTime timestamp = LocalDateTime.now();
 
         // 결과, 에러메시지 설정
-        ServiceResult result = ServiceResult.SUCCESS;
+        ApiResult result = ApiResult.SUCCESS;
         String errorMessage = null;
         Exception exception = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
         if (exception != null) {
             errorMessage = exception.getMessage();
-            result = ServiceResult.ERROR;
+            result = ApiResult.ERROR;
         }
 
         // 소요시간 설정

@@ -1,11 +1,10 @@
-package com.vtw.dna.camel.configuration;
+package com.vtw.dna.internal.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.vtw.dna.camel.DnaExchange;
+import com.vtw.dna.internal.DnaExchange;
 import lombok.SneakyThrows;
 import org.apache.camel.CamelContext;
-import org.apache.camel.spring.boot.CamelContextConfiguration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,18 +17,17 @@ import java.util.List;
 import java.util.Map;
 
 @Configuration
-public class CamelConfiguration {
+public class CamelContextConfiguration {
 
     @Value("${dna.template-parameters-directory}")
     private Path templateParametersDirectory;
 
     @Bean
-    CamelContextConfiguration contextConfiguration() throws Exception {
-        return new CamelContextConfiguration() {
+    org.apache.camel.spring.boot.CamelContextConfiguration contextConfiguration() throws Exception {
+        return new org.apache.camel.spring.boot.CamelContextConfiguration() {
             @SneakyThrows
             @Override
             public void beforeApplicationStart(CamelContext camelContext) {
-                camelContext.getRestConfiguration().setInlineRoutes(false);
                 buildRouteVariables(camelContext);
             }
 

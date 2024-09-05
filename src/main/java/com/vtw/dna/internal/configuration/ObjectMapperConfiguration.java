@@ -1,4 +1,4 @@
-package com.vtw.dna.configuration;
+package com.vtw.dna.internal.configuration;
 
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.TimeZone;
 
 @Configuration
-public class DateFormatConfiguration {
+public class ObjectMapperConfiguration {
 
     private static final String dateFormat = "yyyy-MM-dd";
     private static final String datetimeFormat = "yyyy-MM-dd HH:mm:ss.SSSSSSS";

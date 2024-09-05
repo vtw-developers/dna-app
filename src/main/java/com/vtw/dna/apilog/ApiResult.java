@@ -1,13 +1,13 @@
-package com.vtw.dna.camel;
+package com.vtw.dna.apilog;
 
 import java.util.Arrays;
 
-public enum ServiceResult {
+public enum ApiResult {
     SUCCESS("S"), ERROR("E");
 
     private String code;
 
-    private ServiceResult(String code) {
+    private ApiResult(String code) {
         this.code = code;
     }
 
@@ -15,7 +15,7 @@ public enum ServiceResult {
         return code;
     }
 
-    public static ServiceResult getByCode(String code) {
+    public static ApiResult getByCode(String code) {
         return Arrays.stream(values()).filter(value->value.getCode().equals(code)).findFirst().orElseThrow();
     }
 }
