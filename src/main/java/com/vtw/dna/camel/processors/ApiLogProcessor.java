@@ -2,9 +2,7 @@ package com.vtw.dna.camel.processors;
 
 import com.vtw.dna.camel.ApiLog;
 import com.vtw.dna.camel.ServiceResult;
-import lombok.AllArgsConstructor;
 import org.apache.camel.Exchange;
-import org.apache.camel.FluentProducerTemplate;
 import org.apache.camel.MessageHistory;
 import org.apache.camel.Processor;
 import org.springframework.stereotype.Component;
@@ -14,19 +12,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.apache.camel.builder.endpoint.StaticEndpointBuilders.sql;
-
-@AllArgsConstructor
-@Component("ApiLogSaveProcessor")
-public class ApiLogSaveProcessor implements Processor {
-
-    private final FluentProducerTemplate producerTemplate;
+@Component("ApiLogProcessor")
+public class ApiLogProcessor implements Processor {
 
     @Override
     public void process(Exchange exchange) throws Exception {
         String messageId = exchange.getExchangeId();
         LocalDateTime timestamp = LocalDateTime.now();
 
+        // 결과, 에러메시지 설정
         ServiceResult result = ServiceResult.SUCCESS;
         String errorMessage = null;
         Exception exception = exchange.getProperty(Exchange.EXCEPTION_CAUGHT, Exception.class);
@@ -34,7 +28,9 @@ public class ApiLogSaveProcessor implements Processor {
             errorMessage = exception.getMessage();
             result = ServiceResult.ERROR;
         }
-        List<MessageHistory> messageHistories = (List<MessageHistory>)exchange.getProperty(Exchange.MESSAGE_HISTORY, List.class);
+
+        // 소요시간 설정
+        List<MessageHistory> messageHistories = (List<MessageHistory>) exchange.getProperty(Exchange.MESSAGE_HISTORY, List.class);
         Long elapsedTime = messageHistories
                 .stream().map(h -> h.getElapsed()).reduce(0L, Long::sum);
 
@@ -55,11 +51,6 @@ public class ApiLogSaveProcessor implements Processor {
         params.put("errorMessage", apiLog.getErrorMessage());
         params.put("elapsedTime", apiLog.getElapsedTime());
 
-        String sql = "insert into api_log (message_id, \"timestamp\", flow_id, result, error_message, elapsed_time)" +
-                " values (:#messageId, :#timestamp, :#flowId, :#result, :#errorMessage, :#elapsedTime)";
-
-        producerTemplate.withBody(params)
-                .to(sql(sql))
-                .request();
+        exchange.getMessage().setBody(params);
     }
 }

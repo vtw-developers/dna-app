@@ -9,13 +9,14 @@ spring:
     username: vtw
     password: vtw123#
 camel:
-  variable:
-    test: aaaa
   main:
     routes-include-pattern: "file:meta/**/*.camel.yaml"
     shutdown-timeout: 1
   rest:
     binding-mode: json
+  dataformat:
+    jackson:
+      auto-discover-object-mapper: true
 management:
   security:
     enabled: false

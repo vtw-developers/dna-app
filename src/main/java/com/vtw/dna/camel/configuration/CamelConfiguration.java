@@ -3,7 +3,6 @@ package com.vtw.dna.camel.configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.vtw.dna.camel.DnaExchange;
-import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.apache.camel.CamelContext;
 import org.apache.camel.spring.boot.CamelContextConfiguration;

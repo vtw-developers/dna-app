@@ -7,7 +7,8 @@
         - onCompletion:
             steps:
               - process:
-                  ref: ApiLogSaveProcessor
+                  ref: ApiLogProcessor
+              - log: ${body}
         - to: "direct:ApiKeyCheck"
         - process:
             ref: TemplateParametersToVariableProcessor
