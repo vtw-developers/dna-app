@@ -43,14 +43,6 @@ public class ApiLogProcessor implements Processor {
                 .elapsedTime(elapsedTime)
                 .build();
 
-        Map<String, Object> params = new HashMap<>();
-        params.put("messageId", apiLog.getMessageId());
-        params.put("timestamp", apiLog.getTimestamp());
-        params.put("flowId", apiLog.getFlowId());
-        params.put("result", apiLog.getResult().getCode());
-        params.put("errorMessage", apiLog.getErrorMessage());
-        params.put("elapsedTime", apiLog.getElapsedTime());
-
-        exchange.getMessage().setBody(params);
+        exchange.getMessage().setBody(apiLog);
     }
 }

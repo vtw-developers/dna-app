@@ -21,4 +21,8 @@ public class ApiLog {
     private String flowName;
     private String details;
     private long elapsedTime;
+
+    public void setResultCode(String resultCode) {
+        result = ApiResult.getByCode(resultCode);
+    }
 }

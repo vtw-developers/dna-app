@@ -7,7 +7,7 @@
       steps:
         - process:
             ref: ApiLogProcessor
-        - to: "sql:insert into api_log (message_id, \"timestamp\", flow_id, result, error_message, elapsed_time) values (:#messageId, :#timestamp, :#flowId, :#result, :#errorMessage, :#elapsedTime)"
+        - to: "sql:insert into api_log (message_id, \"timestamp\", flow_id, result, error_message, elapsed_time) values (:#${body.messageId}, :#${body.timestamp}, :#${body.flowId}, :#${body.result.code}, :#${body.errorMessage}, :#${body.elapsedTime})"
         - log: API 로그를 DB에 Insert 했어
 
 # API 로그를 Kafka로 송신
@@ -31,7 +31,9 @@
     from:
       uri: "kafka:api-log?brokers=localhost:9092"
       steps:
-        - process:
-            ref: ApiLogProcessor
-        - to: "sql:insert into api_log (message_id, \"timestamp\", flow_id, result, error_message, elapsed_time) values (:#messageId, :#timestamp, :#flowId, :#result, :#errorMessage, :#elapsedTime)"
+        - unmarshal:
+            json:
+              unmarshalType: aiep.inf.apilog.ApiLog
+        - log: "${body}"
+        - to: "sql:insert into api_log (message_id, \"timestamp\", flow_id, result, error_message, elapsed_time) values (:#${body.messageId}, :#${body.timestamp}, :#${body.flowId}, :#${body.result.code}, :#${body.errorMessage}, :#${body.elapsedTime})"
         - log: API 로그를 Kafka에서 수신해서 DB에 저장했어
