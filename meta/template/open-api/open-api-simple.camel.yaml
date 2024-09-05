@@ -6,7 +6,7 @@
       steps:
         - onCompletion:
             steps:
-              - to: "direct:ApiLogToDb"
+              - to: "direct:ApiLogToKafka"
         - to: "direct:ApiKeyCheck"
         - process:
             ref: TemplateParametersToVariableProcessor
