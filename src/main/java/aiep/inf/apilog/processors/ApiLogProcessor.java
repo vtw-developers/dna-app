@@ -1,7 +1,7 @@
-package com.vtw.dna.apilog.processors;
+package aiep.inf.apilog.processors;
 
-import com.vtw.dna.apilog.ApiLog;
-import com.vtw.dna.apilog.ApiResult;
+import aiep.inf.apilog.ApiLog;
+import aiep.inf.apilog.ApiResult;
 import org.apache.camel.Exchange;
 import org.apache.camel.MessageHistory;
 import org.apache.camel.Processor;

@@ -1,4 +1,4 @@
-package com.vtw.dna.apilog;
+package aiep.inf.apilog;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

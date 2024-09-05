@@ -1,8 +1,8 @@
-package com.vtw.dna.internal.configuration;
+package aiep.inf.internal.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.vtw.dna.internal.DnaExchange;
+import aiep.inf.internal.DnaExchange;
 import lombok.SneakyThrows;
 import org.apache.camel.CamelContext;
 import org.springframework.beans.factory.annotation.Value;

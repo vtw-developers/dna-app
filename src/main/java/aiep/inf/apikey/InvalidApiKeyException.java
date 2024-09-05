@@ -1,4 +1,4 @@
-package com.vtw.dna.apikey;
+package aiep.inf.apikey;
 
 public class InvalidApiKeyException extends RuntimeException {
 

@@ -1,6 +1,6 @@
-package com.vtw.dna.internal.processors;
+package aiep.inf.internal.processors;
 
-import com.vtw.dna.internal.DnaExchange;
+import aiep.inf.internal.DnaExchange;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.springframework.stereotype.Component;

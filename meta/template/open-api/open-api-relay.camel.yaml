@@ -6,9 +6,7 @@
       steps:
         - onCompletion:
             steps:
-              - process:
-                  ref: ApiLogProcessor
-              - log: ${body}
+              - to: "direct:ApiLogToKafka"
         - to: "direct:ApiKeyCheck"
         - process:
             ref: TemplateParametersToVariableProcessor

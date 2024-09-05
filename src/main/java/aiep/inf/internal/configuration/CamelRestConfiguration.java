@@ -1,4 +1,4 @@
-package com.vtw.dna.internal.configuration;
+package aiep.inf.internal.configuration;
 
 import org.apache.camel.builder.RouteConfigurationBuilder;
 import org.springframework.stereotype.Component;

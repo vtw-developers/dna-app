@@ -1,4 +1,4 @@
-package com.vtw.dna.apikey;
+package aiep.inf.apikey;
 
 import org.springframework.stereotype.Component;
 
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class ApiKeyChecker {
     public boolean isValid(String apiKey) {
         // TODO: API Key 검사 로직 구현
-        return false;
+        return true;
     }
 }

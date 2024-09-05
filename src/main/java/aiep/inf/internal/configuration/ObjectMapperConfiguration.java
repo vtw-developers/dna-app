@@ -1,4 +1,4 @@
-package com.vtw.dna.internal.configuration;
+package aiep.inf.internal.configuration;
 
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;

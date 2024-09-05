@@ -1,7 +1,7 @@
-package com.vtw.dna.apikey.processors;
+package aiep.inf.apikey.processors;
 
-import com.vtw.dna.apikey.ApiKeyChecker;
-import com.vtw.dna.apikey.InvalidApiKeyException;
+import aiep.inf.apikey.ApiKeyChecker;
+import aiep.inf.apikey.InvalidApiKeyException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.Exchange;
