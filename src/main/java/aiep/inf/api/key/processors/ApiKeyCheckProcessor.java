@@ -1,7 +1,7 @@
-package aiep.inf.apikey.processors;
+package aiep.inf.api.key.processors;
 
-import aiep.inf.apikey.ApiKeyChecker;
-import aiep.inf.apikey.InvalidApiKeyException;
+import aiep.inf.api.key.ApiKeyChecker;
+import aiep.inf.api.key.InvalidApiKeyException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.Exchange;

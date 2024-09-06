@@ -1,7 +1,7 @@
-package aiep.inf.apilog.processors;
+package aiep.inf.api.log.processors;
 
-import aiep.inf.apilog.ApiLog;
-import aiep.inf.apilog.ApiResult;
+import aiep.inf.api.log.ApiLog;
+import aiep.inf.api.log.ApiResult;
 import org.apache.camel.Exchange;
 import org.apache.camel.MessageHistory;
 import org.apache.camel.Processor;

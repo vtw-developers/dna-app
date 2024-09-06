@@ -1,4 +1,4 @@
-package aiep.inf.apikey;
+package aiep.inf.api.key;
 
 public class InvalidApiKeyException extends RuntimeException {
 

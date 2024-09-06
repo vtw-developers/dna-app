@@ -1,12 +1,22 @@
+- onException:
+    handled:
+      constant: "true"
+    exception:
+      - "aiep.inf.api.key.InvalidApiKeyException"
+      - "java.lang.Exception"
+    steps:
+      - process:
+          ref: ApiErrorHandlerProcessor
+      - log: ${body}
+- onCompletion:
+    steps:
+      - to: "direct:ApiLogToKafka"
 - route:
     autoStartup: true
     id: "Template_OpenApi_Simple"
     from:
       uri: "direct:Template_OpenApi_Simple"
       steps:
-        - onCompletion:
-            steps:
-              - to: "direct:ApiLogToKafka"
         - to: "direct:ApiKeyCheck"
         - process:
             ref: TemplateParametersToVariableProcessor

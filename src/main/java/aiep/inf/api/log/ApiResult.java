@@ -1,4 +1,4 @@
-package aiep.inf.apilog;
+package aiep.inf.api.log;
 
 import java.util.Arrays;
 
