@@ -8,6 +8,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/portal
     username: vtw
     password: vtw123#
+mybatis:
+  mapper-locations: classpath:mybatis/mappers/**/*.xml
+  configuration:
+    jdbc-type-for-null: null
+    map-underscore-to-camel-case: true
 camel:
   main:
     routes-include-pattern: "file:meta/**/*.camel.yaml"

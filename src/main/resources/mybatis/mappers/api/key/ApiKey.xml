@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aiep.inf.api.key.repository.ApiKeyRepository">
+    <select id="sample">
+        SELECT '브이티더블유' AS MY_NAME
+    </select>
+</mapper>

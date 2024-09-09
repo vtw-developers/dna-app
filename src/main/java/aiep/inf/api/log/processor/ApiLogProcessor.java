@@ -1,4 +1,4 @@
-package aiep.inf.api.log.processors;
+package aiep.inf.api.log.processor;
 
 import aiep.inf.api.log.ApiLog;
 import aiep.inf.api.log.ApiResult;
@@ -8,9 +8,7 @@ import org.apache.camel.Processor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Component("ApiLogProcessor")
 public class ApiLogProcessor implements Processor {

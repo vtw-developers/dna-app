@@ -1,4 +1,4 @@
-package aiep.inf.internal.processors;
+package aiep.inf.internal.processor;
 
 import aiep.inf.internal.DnaExchange;
 import org.apache.camel.Exchange;

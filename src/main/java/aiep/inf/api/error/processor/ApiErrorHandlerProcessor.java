@@ -1,5 +1,6 @@
-package aiep.inf.api.error;
+package aiep.inf.api.error.processor;
 
+import aiep.inf.api.error.FaultMessage;
 import aiep.inf.api.key.InvalidApiKeyException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
