@@ -4,6 +4,9 @@ import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
 import org.springframework.stereotype.Component;
 
+/*
+ * 아무 로직도 실행하지 않는 Camel Direct Route
+ */
 @Component(EmptyDirect.ROUTE_ID)
 public class EmptyDirect extends EndpointRouteBuilder {
 

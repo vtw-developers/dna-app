@@ -21,6 +21,6 @@ public class ApiKeyChecker {
         log.info("Sample SQL: {}", sample);
 
         // TODO: API Key 검사 로직 구현
-        return true;
+        return false;
     }
 }

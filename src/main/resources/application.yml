@@ -1,5 +1,7 @@
 dna:
-  template-parameters-directory: "C:\\Develop\\Projects\\dna-app\\meta\\templated"
+  meta-directory: "C:\\Develop\\Projects\\dna-app\\meta"
+  template-parameters-directory: "${dna.meta-directory}\\templated"
+  rest-errors-file: "${dna.meta-directory}\\rest\\rest-errors.yaml"
 spring:
   application:
     name: dna-app

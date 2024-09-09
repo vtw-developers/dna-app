@@ -2,7 +2,7 @@
     handled:
       constant: "true"
     exception:
-      - "aiep.inf.api.key.InvalidApiKeyException"
+      - "aiep.inf.api.key.exception.InvalidApiKeyException"
       - "java.lang.Exception"
     steps:
       - process:
