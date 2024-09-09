@@ -33,7 +33,7 @@
       steps:
         - unmarshal:
             json:
-              unmarshalType: aiep.inf.apilog.ApiLog
+              unmarshalType: aiep.inf.api.log.ApiLog
         - log: "${body}"
         - to: "sql:insert into api_log (message_id, \"timestamp\", flow_id, result, error_message, elapsed_time) values (:#${body.messageId}, :#${body.timestamp}, :#${body.flowId}, :#${body.result.code}, :#${body.errorMessage}, :#${body.elapsedTime})"
         - log: API 로그를 Kafka에서 수신해서 DB에 저장했어
