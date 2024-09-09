@@ -17,10 +17,11 @@
     from:
       uri: "direct:Template_OpenApi_Simple"
       steps:
-        - to: "direct:ApiKeyCheck"
         - process:
             ref: TemplateParametersToVariableProcessor
-        - log: ${variable.DnaTemplateParameters}
+        - to: "direct:ApiKeyCheck"
+        - log:  ${variable.postApiKeyCheckDirect}
+        - toD: "direct:${variable.postApiKeyCheckDirect}" #Templated Flow별로 다른 로직을 넣고 싶을 때
         - setBody:
             simple: '{"id": ${variable.id}, "name": "${variable.name}"}'
         - unmarshal:

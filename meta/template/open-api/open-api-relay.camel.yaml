@@ -1,15 +1,25 @@
+- onException:
+    handled:
+      constant: "true"
+    exception:
+      - "aiep.inf.api.key.InvalidApiKeyException"
+      - "java.lang.Exception"
+    steps:
+      - process:
+          ref: ApiErrorHandlerProcessor
+      - log: ${body}
+- onCompletion:
+    steps:
+      - to: "direct:ApiLogToKafka"
 - route:
     autoStartup: true
     id: "Template_OpenApi_Relay"
     from:
       uri: "direct:Template_OpenApi_Relay"
       steps:
-        - onCompletion:
-            steps:
-              - to: "direct:ApiLogToKafka"
-        - to: "direct:ApiKeyCheck"
         - process:
             ref: TemplateParametersToVariableProcessor
+        - to: "direct:ApiKeyCheck"
         - toD: "${variable.relay[url]}"
         - unmarshal:
             json: {}

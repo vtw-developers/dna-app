@@ -4,3 +4,4 @@
     id: 2
     name: 홍길동
     age: 86
+    postApiKeyCheckDirect: Api2BizDirect
