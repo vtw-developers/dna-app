@@ -1,8 +1,0 @@
-- templateId: temp1
-  flowId: Api3
-  parameters:
-    id: 1
-    name: 우태진
-    age: 39
-    relay:
-      url: "http://localhost:8080/external/api-1?bridgeEndpoint=true"

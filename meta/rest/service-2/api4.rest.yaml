@@ -27,4 +27,4 @@ template:
     name: 홍길동
     age: 86
     relay:
-      url: "http://localhost:8080/external/api-2?bridgeEndpoint=true"
+      url: "http://localhost:8080/external/api-2"

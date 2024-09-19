@@ -1,7 +1,0 @@
-- templateId: temp1
-  flowId: Api1
-  parameters:
-    id: 1
-    name: 우태진
-    age: 39
-    postApiKeyCheckDirect: EmptyDirect
