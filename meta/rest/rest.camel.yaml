@@ -1,7 +1,18 @@
 - rest:
+    path: service-1
+    tag: 서비스 하나
     get:
     - id: Api1
       path: api-1
+      param:
+        - name: myName
+          type: query
+          required: true
+          dataType: string
+        - name: myAddress
+          type: query
+          required: false
+          dataType: number
       to: direct:Template_OpenApi_Simple
     - id: Api2
       path: api-2

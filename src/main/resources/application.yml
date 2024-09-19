@@ -24,11 +24,13 @@ camel:
     xml-data-format: jacksonXml
     api-context-path: api-doc
     api-property:
-      host: localhost:8071
+      host: localhost:8080
       "base.path": "/"
       schemes: [ http, https ]
       "api.default.consumes": application/json,application/xml
       "api.default.produces": application/json,application/xml
+      "api.title": 가가가가가
+      "api.version": 1.0.0
     enable-cors: true
     cors-headers:
       "Access-Control-Allow-Origin": "*"
