@@ -1,6 +1,7 @@
 dna:
   meta-directory: "C:\\Develop\\Projects\\dna-app\\meta"
   template-parameters-directory: "${dna.meta-directory}\\templated"
+  rest-api-directory: "${dna.meta-directory}\\rest"
   rest-errors-file: "${dna.meta-directory}\\rest\\rest-errors.yaml"
 spring:
   application:
@@ -29,7 +30,7 @@ camel:
       schemes: [ http, https ]
       "api.default.consumes": application/json,application/xml
       "api.default.produces": application/json,application/xml
-      "api.title": 가가가가가
+      "api.title": 교수학습 연계 API
       "api.version": 1.0.0
     enable-cors: true
     cors-headers:

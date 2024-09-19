@@ -27,18 +27,22 @@ public class CamelContextConfiguration {
     @Value("${dna.rest-errors-file}")
     private Path restErrorsFile;
 
+    @Value("${dna.rest-api-directory}")
+    private Path restApiDirectory;
+
     @Bean
     org.apache.camel.spring.boot.CamelContextConfiguration contextConfiguration() throws Exception {
         return new org.apache.camel.spring.boot.CamelContextConfiguration() {
             @SneakyThrows
             @Override
             public void beforeApplicationStart(CamelContext camelContext) {
-                loadRouteVariables(camelContext);
+               // loadRouteVariables(camelContext);
                 loadRestErrors(camelContext);
             }
 
             @Override
             public void afterApplicationStart(CamelContext camelContext) {
+
             }
         };
     }

@@ -1,3 +1,4 @@
+# 외부 API 샘플
 - rest:
     path: external
     get:
