@@ -23,9 +23,6 @@ responseElements:
 template:
   ref: Template_OpenApi_Relay
   parameters:
-    id: 1
-    name: 우태진
-    age: 39
     relay:
       url: "http://localhost:8080/external/api-1"
 

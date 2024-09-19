@@ -23,8 +23,5 @@ responseElements:
 template:
   ref: Template_OpenApi_Relay
   parameters:
-    id: 2
-    name: 홍길동
-    age: 86
     relay:
       url: "http://localhost:8080/external/api-2"
