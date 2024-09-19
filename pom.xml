@@ -29,14 +29,14 @@
       <dependency>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-bom</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.camel.springboot</groupId>
         <artifactId>camel-spring-boot-bom</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -84,6 +84,10 @@
     <dependency>
       <groupId>org.apache.camel.springboot</groupId>
       <artifactId>camel-jackson-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel.springboot</groupId>
+      <artifactId>camel-openapi-java-starter</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.camel.springboot</groupId>

@@ -21,6 +21,21 @@ camel:
     shutdown-timeout: 1
   rest:
     binding-mode: json
+    xml-data-format: jacksonXml
+    api-context-path: api-doc
+    api-property:
+      host: localhost:8071
+      "base.path": "/"
+      schemes: [ http, https ]
+      "api.default.consumes": application/json,application/xml
+      "api.default.produces": application/json,application/xml
+    enable-cors: true
+    cors-headers:
+      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Headers": "Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization"
+    api-vendor-extension: true
+    api-host: localhost
+    use-x-forward-headers: false
   dataformat:
     jackson:
       auto-discover-object-mapper: true
