@@ -41,6 +41,7 @@ public class RestRoute extends EndpointRouteBuilder {
                             ParamDefinition param = new ParamDefinition();
                             param.setName(requestParameter.getName());
                             param.setDataType(requestParameter.getDataType());
+                            param.setRequired(requestParameter.isRequired());
                             params.add(param);
                         }
 
