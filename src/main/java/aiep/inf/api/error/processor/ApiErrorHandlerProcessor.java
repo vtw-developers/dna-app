@@ -26,6 +26,7 @@ public class ApiErrorHandlerProcessor implements Processor {
         String errorCode = "";
 
         if (exception != null) {
+            log.error(exception.getMessage(), exception);
             CamelContext context = exchange.getContext();
             List<RestError> restErrors = context.getRegistry().lookupByNameAndType(DnaExchange.REST_ERRORS, List.class);
             for (RestError restError : restErrors) {

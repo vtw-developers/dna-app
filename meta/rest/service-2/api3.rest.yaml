@@ -7,22 +7,23 @@ path: /service-2/api-3
 tag: 서비스 둘
 description: API 셋
 requestParameters:
-  - name: myName
+  - name: key
     required: true
     dataType: string
-  - name: myAddress
-    required: false
-    dataType: number
+  - name: targetDt
+    required: true
+    dataType: string
 responseElements:
   - name: myName
     dataType: string
   - name: myAddress
     dataType: number
+outType: aiep.inf.api.dto.ResponseDailyBoxOfficeList
 
 # 템플릿 정보
 template:
   ref: Template_OpenApi_Relay
   parameters:
     relay:
-      url: "http://localhost:8080/external/api-1"
+      url: "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
 
