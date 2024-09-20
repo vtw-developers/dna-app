@@ -20,7 +20,7 @@
         - process:
             ref: TemplateParametersToVariableProcessor
         - to: "direct:ApiKeyCheck"
-        - log:  ${variable.postApiKeyCheckDirect}
+        - log: ${variable.postApiKeyCheckDirect}
         - toD: "direct:${variable.postApiKeyCheckDirect}" #Templated Flow별로 다른 로직을 넣고 싶을 때
         - setBody:
             simple: '{"id": ${variable.id}, "name": "${variable.name}"}'

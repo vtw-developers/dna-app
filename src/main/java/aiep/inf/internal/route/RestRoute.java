@@ -1,5 +1,6 @@
 package aiep.inf.internal.route;
 
+import aiep.inf.api.dto.User;
 import aiep.inf.internal.DnaExchange;
 import aiep.inf.internal.RequestParameter;
 import aiep.inf.internal.RestSpec;
@@ -7,6 +8,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
 import org.apache.camel.model.rest.ParamDefinition;
+import org.apache.camel.model.rest.RestBindingMode;
+import org.apache.camel.model.rest.RestDefinition;
+import org.apache.camel.model.rest.RestParamType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -42,17 +46,23 @@ public class RestRoute extends EndpointRouteBuilder {
                             param.setName(requestParameter.getName());
                             param.setDataType(requestParameter.getDataType());
                             param.setRequired(requestParameter.isRequired());
+                            param.setType(RestParamType.query);
                             params.add(param);
                         }
 
-                        rest()
-                                .verb(restSpec.getHttpMethod())
+                        RestDefinition rest = rest()
+                                .verb(restSpec.getHttpMethod().toLowerCase())
                                 .tag(restSpec.getTag())
                                 .id(restSpec.getId())
                                 .path(restSpec.getPath())
                                 .description(restSpec.getDescription())
                                 .params(params)
+                                .produces("application/json")
+                                .responseMessage("200", "successful operation")
                                 .to("direct:" + restSpec.getTemplate().getRef());
+                        if (restSpec.getOutType() != null) {
+                            rest.outType(restSpec.getOutType());
+                        }
 
                         Map<String, Object> parameters = Collections.unmodifiableMap(restSpec.getTemplate().getParameters());
                         getCamelContext().setVariable("route:" + restSpec.getId() + ":" + DnaExchange.TEMPLATE_PARAMETERS, parameters);
