@@ -76,9 +76,9 @@ outType: aiep.inf.api.dto.ResponseDailyBoxOfficeList # For SwaggerUI
 template:
   ref: RestRelay
   parameters:
-    "relay.httpMethod": get
-    "relay.url": "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
-    "sample.data": |
+    relay.httpMethod: get
+    relay.url: "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+    sample.data: |
       {
           "id": 54,
           "manufacturer": "ACME",
