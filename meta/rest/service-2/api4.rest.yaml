@@ -21,7 +21,15 @@ requestParameters:
 
 # 템플릿 정보
 template:
-  ref: Template_OpenApi_Relay
+  ref: RestRelay
   parameters:
-    relay:
-      url: "http://localhost:8080/external/api-2"
+    "relay.httpMethod": get
+    "relay.url": "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+    sampleObject: |
+      {
+          "id": 54,
+          "manufacturer": "ACME",
+          "location": "New York",
+          "createdAt": "2012-10-01 07:42:35.825565",
+          "description": "test"
+      }

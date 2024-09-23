@@ -1,5 +1,5 @@
 name: 간단한 REST API
-templateId: RestApi_Simple
+templateId: RestSimple
 parameters:
   id:
     type: string
@@ -10,6 +10,8 @@ parameters:
   age:
     type: number
     description: 나이
-
-# DnA로 그릴 때
-diagram: {}
+  postApiKeyCheckDirect:
+    type: string
+    description: API Key 검사 전 실행 Direct Endpoint
+# DnA Flow Diagram
+#diagram: {}

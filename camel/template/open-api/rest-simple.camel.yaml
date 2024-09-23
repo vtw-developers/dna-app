@@ -13,9 +13,9 @@
       - to: "direct:ApiLogToKafka"
 - route:
     autoStartup: true
-    id: "Template_OpenApi_Simple"
+    id: RestSimple
     from:
-      uri: "direct:Template_OpenApi_Simple"
+      uri: "direct:RestSimple"
       steps:
         - process:
             ref: TemplateParametersToVariableProcessor

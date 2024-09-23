@@ -13,12 +13,13 @@
       - to: "direct:ApiLogToKafka"
 - route:
     autoStartup: true
-    id: "Template_OpenApi_Relay"
+    id: "RestRelay"
     from:
-      uri: "direct:Template_OpenApi_Relay"
+      uri: "direct:RestRelay"
       steps:
         - process:
             ref: TemplateParametersToVariableProcessor
+        - log: ${variable.sampleObject}
         - to: "direct:ApiKeyCheck"
         - log: ${header.CamelHttpQuery}
         - toD: "${variable.relay.url}?bridgeEndpoint=true&httpMethod=${variable.relay.httpMethod}"
