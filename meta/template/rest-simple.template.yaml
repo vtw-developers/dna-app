@@ -12,6 +12,6 @@ parameters:
     description: 나이
   postApiKeyCheckDirect:
     type: string
-    description: API Key 검사 전 실행 Direct Endpoint
+    description: API Key 검사 전 실행 Direct Endpoint 명
 # DnA Flow Diagram
 #diagram: {}

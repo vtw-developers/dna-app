@@ -8,15 +8,7 @@ parameters:
   "relay.url":
     type: string
     description: 중계할 Rest API의 URL
-  sampleObject:
+  "sample.data":
     type: object
-    defaultValue: |
-      {
-          "id": 54,
-          "manufacturer": "ACME",
-          "location": "New York",
-          "createdAt": "2012-10-01 07:42:35.825565",
-          "description": "test"
-      }
 # DnA Flow Diagram
 #diagram: {}

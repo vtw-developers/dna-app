@@ -25,7 +25,7 @@ template:
   parameters:
     "relay.httpMethod": get
     "relay.url": "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
-    sampleObject: |
+    "sample.data": |
       {
           "id": 54,
           "manufacturer": "ACME",
