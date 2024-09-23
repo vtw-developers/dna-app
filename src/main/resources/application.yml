@@ -18,7 +18,7 @@ mybatis:
     map-underscore-to-camel-case: true
 camel:
   main:
-    routes-include-pattern: "file:meta/**/*.camel.yaml"
+    routes-include-pattern: "file:camel/**/*.camel.yaml"
     shutdown-timeout: 1
   rest:
     binding-mode: json

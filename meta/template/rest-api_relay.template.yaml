@@ -1,0 +1,12 @@
+name: 중계 REST API
+templateId: RestApi_Relay
+parameters:
+  "relay.httpMethod":
+    type: string
+    description: 중계할 Rest API의 HTTP Method
+    defaultValue: GET
+  "relay.url":
+    type: string
+    description: 중계할 Rest API의 URL
+# DnA로 그릴 때
+diagram: {}

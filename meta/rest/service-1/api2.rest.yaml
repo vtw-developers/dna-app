@@ -13,11 +13,11 @@ requestParameters:
   - name: myAddress
     required: false
     dataType: number
-responseElements:
-  - name: myName
-    dataType: string
-  - name: myAddress
-    dataType: number
+#responseElements:
+#  - name: myName
+#    dataType: string
+#  - name: myAddress
+#    dataType: number
 outType: aiep.inf.api.dto.BooleanApiResponse
 
 # 템플릿 정보

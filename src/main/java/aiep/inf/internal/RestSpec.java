@@ -12,7 +12,7 @@ public class RestSpec {
     private String tag;
     private String description;
     private List<RequestParameter> requestParameters;
-    private List<ResponseElement> responseElements;
+    private DataSchema responseBody;
     private String outType;
     private Templated template;
 }

@@ -13,17 +13,69 @@ requestParameters:
   - name: targetDt
     required: true
     dataType: string
-responseElements:
-  - name: myName
-    dataType: string
-  - name: myAddress
-    dataType: number
-outType: aiep.inf.api.dto.ResponseDailyBoxOfficeList
+responseBody: # For DnA
+  type: object
+  properties:
+    boxOfficeResult:
+      type: object
+      properties:
+        boxofficeType:
+          type: string
+          description: 박스오피스 종류
+          example: 일별 박스오피스
+        showRange:
+          type: string
+        dailyBoxOfficeList:
+          type: array
+          items:
+            type: object
+            properties:
+              rnum:
+                type: string
+                description: 순번
+                example: 1
+              rank:
+                type: string
+                description: 해당일자의 박스오피스 순위
+                example: 1
+              rankInten:
+                type: string
+              rankOldAndNew:
+                type: string
+              movieCd:
+                type: string
+              movieNm:
+                type: string
+              openDt:
+                type: string
+              salesAmt:
+                type: string
+              salesShare:
+                type: string
+              salesInten:
+                type: string
+              salesChange:
+                type: string
+              salesAcc:
+                type: string
+              audiCnt:
+                type: string
+              audiInten:
+                type: string
+              audiChange:
+                type: string
+              audiAcc:
+                type: string
+              scrnCnt:
+                type: string
+              showCnt:
+                type: string
+outType: aiep.inf.api.dto.ResponseDailyBoxOfficeList # For SwaggerUI
 
 # 템플릿 정보
 template:
   ref: Template_OpenApi_Relay
   parameters:
-    relay:
-      url: "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+    "relay.httpMethod": get
+    "relay.url": "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
 

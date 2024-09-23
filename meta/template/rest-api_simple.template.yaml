@@ -1,0 +1,15 @@
+name: 간단한 REST API
+templateId: RestApi_Simple
+parameters:
+  id:
+    type: string
+    description: 아이디
+  name:
+    type: string
+    description: 이름
+  age:
+    type: number
+    description: 나이
+
+# DnA로 그릴 때
+diagram: {}

@@ -21,7 +21,7 @@
             ref: TemplateParametersToVariableProcessor
         - to: "direct:ApiKeyCheck"
         - log: ${header.CamelHttpQuery}
-        - toD: "${variable.relay[url]}?bridgeEndpoint=true"
+        - toD: "${variable.relay.url}?bridgeEndpoint=true&httpMethod=${variable.relay.httpMethod}"
         - unmarshal:
             json: {}
         - log: Rest response completed! ${body}
