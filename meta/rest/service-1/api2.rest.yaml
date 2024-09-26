@@ -1,23 +1,18 @@
 # 기본 정보
 id: Api2
+name: API 둘
 httpMethod: get
 path: /service-1/api-2
 
 # 부가 정보
 tag: 서비스 하나
-description: API 둘
 requestParameters:
   - name: myName
     required: true
-    dataType: string
+    type: string
   - name: myAddress
     required: false
-    dataType: number
-#responseElements:
-#  - name: myName
-#    dataType: string
-#  - name: myAddress
-#    dataType: number
+    type: number
 outType: aiep.inf.api.dto.BooleanApiResponse
 
 # 템플릿 정보

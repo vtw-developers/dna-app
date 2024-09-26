@@ -6,8 +6,8 @@ import java.util.Map;
 
 @Data
 public class FlowTemplateMeta {
+    private String id;
     private String name;
-    private String templateId;
     private Map<String, FlowTemplateParameter> parameters;
 
 }

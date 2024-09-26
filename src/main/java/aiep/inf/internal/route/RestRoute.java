@@ -1,21 +1,15 @@
 package aiep.inf.internal.route;
 
-import aiep.inf.api.dto.User;
 import aiep.inf.internal.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.camel.builder.endpoint.EndpointRouteBuilder;
 import org.apache.camel.model.rest.ParamDefinition;
-import org.apache.camel.model.rest.RestBindingMode;
 import org.apache.camel.model.rest.RestDefinition;
 import org.apache.camel.model.rest.RestParamType;
-import org.apache.catalina.util.URLEncoder;
-import org.apache.hc.core5.net.URLEncodedUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriBuilder;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -42,7 +36,7 @@ public class RestRoute extends EndpointRouteBuilder {
                     try {
                         String yaml = Files.readString(path);
                         FlowTemplateMeta flowTemplateMeta = new ObjectMapper(new YAMLFactory()).readValue(yaml, FlowTemplateMeta.class);
-                        flowTemplateMetas.put(flowTemplateMeta.getTemplateId(), flowTemplateMeta);
+                        flowTemplateMetas.put(flowTemplateMeta.getId(), flowTemplateMeta);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -63,7 +57,7 @@ public class RestRoute extends EndpointRouteBuilder {
                         for (RequestParameter requestParameter : requestParameters) {
                             ParamDefinition param = new ParamDefinition();
                             param.setName(requestParameter.getName());
-                            param.setDataType(requestParameter.getDataType());
+                            param.setDataType(requestParameter.getType());
                             param.setRequired(requestParameter.isRequired());
                             param.setType(RestParamType.query);
                             params.add(param);
@@ -74,7 +68,7 @@ public class RestRoute extends EndpointRouteBuilder {
                                 .tag(restSpec.getTag())
                                 .id(restSpec.getId())
                                 .path(restSpec.getPath())
-                                .description(restSpec.getDescription())
+                                .description(restSpec.getName())
                                 .params(params)
                                 .produces("application/json")
                                 .responseMessage("200", "successful operation")

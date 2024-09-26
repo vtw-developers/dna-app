@@ -1,18 +1,18 @@
 # 기본 정보
 id: Api3
+name: API 셋
 httpMethod: get
 path: /service-2/api-3
 
 # 부가 정보
 tag: 서비스 둘
-description: API 셋
 requestParameters:
   - name: key
     required: true
-    dataType: string
+    type: string
   - name: targetDt
     required: true
-    dataType: string
+    type: string
 responseBody: # For DnA
   type: object
   properties:

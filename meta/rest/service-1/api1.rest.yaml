@@ -1,23 +1,18 @@
 # 기본 정보
 id: Api1
+name: API 하나
 httpMethod: get
 path: /service-1/api-1
 
 # 부가 정보
 tag: 서비스 하나
-description: API 하나
 requestParameters:
   - name: myName
     required: true
-    dataType: string
+    type: string
   - name: myAddress
     required: false
-    dataType: number
-#responseElements:
-#  - name: myName
-#    dataType: string
-#  - name: myAddress
-#    dataType: number
+    type: number
 outType: aiep.inf.api.dto.ListApiResponse # Swagger UI에 Response Body 표현. responseElements 정보와 동일하게 수작업 필요..
 
 # 템플릿 정보

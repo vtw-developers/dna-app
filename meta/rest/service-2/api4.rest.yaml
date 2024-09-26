@@ -1,23 +1,76 @@
 # 기본 정보
 id: Api4
+name: API 넷
 httpMethod: get
 path: /service-2/api-4
 
 # 부가 정보
 tag: 서비스 둘
-description: API 넷
 requestParameters:
   - name: myName
     required: true
-    dataType: string
+    type: string
   - name: myAddress
     required: false
-    dataType: number
-#responseElements:
-#  - name: myName
-#    dataType: string
-#  - name: myAddress
-#    dataType: number
+    type: number
+responseBody: # For DnA
+  type: object
+  properties:
+    boxOfficeResult:
+      type: object
+      properties:
+        boxofficeType:
+          type: string
+          description: 박스오피스 종류
+          example: 일별 박스오피스
+        showRange:
+          type: string
+        dailyBoxOfficeList:
+          type: array
+          items:
+            type: object
+            properties:
+              rnum:
+                type: string
+                description: 순번
+                example: 1
+              rank:
+                type: string
+                description: 해당일자의 박스오피스 순위
+                example: 1
+              rankInten:
+                type: string
+              rankOldAndNew:
+                type: string
+              movieCd:
+                type: string
+              movieNm:
+                type: string
+              openDt:
+                type: string
+              salesAmt:
+                type: string
+              salesShare:
+                type: string
+              salesInten:
+                type: string
+              salesChange:
+                type: string
+              salesAcc:
+                type: string
+              audiCnt:
+                type: string
+              audiInten:
+                type: string
+              audiChange:
+                type: string
+              audiAcc:
+                type: string
+              scrnCnt:
+                type: string
+              showCnt:
+                type: string
+outType: aiep.inf.api.dto.ResponseDailyBoxOfficeList # For SwaggerUI
 
 # 템플릿 정보
 template:

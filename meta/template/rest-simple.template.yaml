@@ -1,5 +1,5 @@
+id: RestSimple
 name: 간단한 REST API
-templateId: RestSimple
 parameters:
   id:
     type: string
