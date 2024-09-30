@@ -1,0 +1,10 @@
+- route:
+    autoStartup: true
+    id: "Sample"
+    from:
+      uri: "direct:Sample"
+      steps:
+        - process:
+            ref: TemplateParametersToVariableProcessor
+        - log: ${variable.sampleObject}
+

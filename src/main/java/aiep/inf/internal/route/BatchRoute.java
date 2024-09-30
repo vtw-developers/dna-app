@@ -52,7 +52,9 @@ public class BatchRoute extends EndpointRouteBuilder {
                   RestSpec restSpec = new ObjectMapper(new YAMLFactory()).readValue(yaml, RestSpec.class);
 
                   from("direct:" + restSpec.getId()).id(restSpec.getId())
-                    .to("direct:" + restSpec.getTemplate().getRef());
+                          .setVariable("routeId", constant(restSpec.getId()))
+                          .process("TemplateParametersToVariableProcessor")
+                          .to("direct:" + restSpec.getTemplate().getRef());
 
                   Map<String, Object> parameters = restSpec.getTemplate().getParameters();
                   parameters.forEach((k, v) -> {

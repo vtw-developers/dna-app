@@ -1,5 +1,5 @@
-type: REST
-id: RestRelay
+type: BATCH
+id: SampleBatch
 name: 중계 REST API
 parameters:
   relay.httpMethod:

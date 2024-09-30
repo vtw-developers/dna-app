@@ -15,6 +15,11 @@ public class TemplateParametersToVariableProcessor implements Processor {
         Map<String, Object> parameters = exchange.getVariable("route:" + exchange.getFromRouteId() + ":" + DnaExchange.TEMPLATE_PARAMETERS, Map.class);
         exchange.setVariable(DnaExchange.TEMPLATE_PARAMETERS, parameters);
 
+        if (parameters == null) {
+            String routeId = exchange.getVariable("routeId", String.class);
+            parameters = exchange.getVariable("route:" + routeId + ":" + DnaExchange.TEMPLATE_PARAMETERS, Map.class);
+        }
+
         parameters.forEach((key, value) -> {
             exchange.setVariable(key, value);
         });
