@@ -1,0 +1,11 @@
+# 기본 정보
+id: Download1
+name: download
+
+# 템플릿 정보
+template:
+  ref: HttpFileDownload
+  parameters:
+    request.url: "https://nodejs.org/dist/v20.17.0/node-v20.17.0-x64.msi"
+    download.directory: "target"
+    download.fileName: "test.msi"

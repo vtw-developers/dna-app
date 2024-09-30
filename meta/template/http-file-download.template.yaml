@@ -1,0 +1,17 @@
+#type: BATCH
+id: HttpFileDownload
+name: http file download
+parameters:
+
+  request.url:
+    type: string
+    description: 요청 URL
+  download.directory:
+    type: string # string/integer/number/object/array/boolean
+    description: 다운로드 경로
+  download.fileName:
+    type: string
+    description: 파일명
+
+# DnA Flow Diagram
+#diagram: {}

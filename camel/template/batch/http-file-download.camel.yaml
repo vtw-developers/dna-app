@@ -1,0 +1,10 @@
+- route:
+    autoStartup: true
+    id: "HttpFileDownload"
+    from:
+      uri: "direct:HttpFileDownload"
+      steps:
+        - process:
+            ref: TemplateParametersToVariableProcessor
+        - log: ${variable.request.url}
+

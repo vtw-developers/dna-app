@@ -16,7 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-@Component
+//@Component
 public class RestRoute extends EndpointRouteBuilder {
 
     @Value("${dna.meta-directory}")
