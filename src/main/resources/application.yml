@@ -11,6 +11,38 @@ spring:
     url: jdbc:postgresql://localhost:5432/portal
     username: vtw
     password: vtw123#
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceId: Central
+            instanceName: ${dna.app.name}
+          jobStore:
+            dataSource: quartzDataSource
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+            useProperties: false
+            tablePrefix: QRTZ_
+            misfireThreshold: 1000
+            clusterCheckinInterval: 1000
+            isClustered: true
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+          dataSource:
+            quartzDataSource:
+              provider: hikaricp
+              driver: ${spring.datasource.driver-class-name}
+              URL: ${spring.datasource.url}
+              user: ${spring.datasource.username}
+              password: ${spring.datasource.password}
+    auto-startup: true
 mybatis:
   mapper-locations: classpath:mybatis/mappers/**/*.xml
   configuration:

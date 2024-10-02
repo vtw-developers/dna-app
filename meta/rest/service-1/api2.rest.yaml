@@ -13,7 +13,7 @@ requestParameters:
   - name: myAddress
     required: false
     type: number
-outType: aiep.inf.api.dto.BooleanApiResponse
+outType: com.vtw.dna.api.dto.BooleanApiResponse
 
 # 템플릿 정보
 template:

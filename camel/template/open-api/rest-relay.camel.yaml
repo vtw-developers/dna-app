@@ -2,7 +2,7 @@
     handled:
       constant: "true"
     exception:
-      - "aiep.inf.api.key.exception.InvalidApiKeyException"
+      - "com.vtw.dna.api.key.exception.InvalidApiKeyException"
       - "java.lang.Exception"
     steps:
       - process:

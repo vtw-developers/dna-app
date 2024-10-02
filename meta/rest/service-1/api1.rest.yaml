@@ -13,7 +13,7 @@ requestParameters:
   - name: myAddress
     required: false
     type: number
-outType: aiep.inf.api.dto.ListApiResponse # Swagger UI에 Response Body 표현. responseElements 정보와 동일하게 수작업 필요..
+outType: com.vtw.dna.api.dto.ListApiResponse # Swagger UI에 Response Body 표현. responseElements 정보와 동일하게 수작업 필요..
 
 # 템플릿 정보
 template:

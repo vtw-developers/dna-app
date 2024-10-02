@@ -1,4 +1,4 @@
-- exception: aiep.inf.api.key.exception.InvalidApiKeyException
+- exception: com.vtw.dna.api.key.exception.InvalidApiKeyException
   errorCode: API-001
   message: 유효하지 않은 API 키입니다.
   httpStatus: 400
