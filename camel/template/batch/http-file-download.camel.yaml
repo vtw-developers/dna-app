@@ -4,7 +4,7 @@
     from:
       uri: "direct:HttpFileDownload"
       steps:
-#        - process:
-#            ref: TemplateParametersToVariableProcessor
-        - log: ${variable.request.url}
-
+        - toD: "${variable.request.url}"
+        - process:
+            ref: FileNameProcessor
+        - toD: "file:${variable.download.directory}"
