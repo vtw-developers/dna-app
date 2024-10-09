@@ -1,0 +1,10 @@
+# API 로그를 직접 DB에 저장
+- route:
+    autoStartup: true
+    id: SampleBatchInsert
+    from:
+      uri: "direct:SampleBatchInsert"
+      steps:
+        - to: "sql:select * from source_table?dataSource=#SourceDB"
+        - to: "sql:insert into target_table (id, name) values (:#id, :#name)?dataSource=#TargetDB&batch=true"
+        - log: TargetDB에 ${header.CamelSqlUpdateCount}건이 Insert 되었습니다.
