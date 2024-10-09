@@ -3,6 +3,7 @@ dna:
   template-parameters-directory: "${dna.meta-directory}\\templated"
   rest-api-directory: "${dna.meta-directory}\\rest"
   rest-errors-file: "${dna.meta-directory}\\rest\\rest-errors.yaml"
+  datasources-file: "${dna.meta-directory}\\datasources.yaml"
 spring:
   application:
     name: dna-app
@@ -20,7 +21,7 @@ spring:
         quartz:
           scheduler:
             instanceId: Central
-            instanceName: ${dna.app.name}
+            instanceName: Central
           jobStore:
             dataSource: quartzDataSource
             class: org.quartz.impl.jdbcjobstore.JobStoreTX
