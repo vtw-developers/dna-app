@@ -13,13 +13,12 @@ public class FileNameProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         Object variableFileName = exchange.getVariable("download.fileName");
-        if(variableFileName == null) {
+        if (variableFileName == null) {
             String content = exchange.getIn().getHeader("Content-Disposition", String.class);
             String fileName = content.replace("attachment;filename=", "");
             fileName = new String(fileName.getBytes("ISO-8859-1"), "UTF-8");
             exchange.getMessage().setHeader(Exchange.FILE_NAME, fileName);
-        }
-        else {
+        } else {
             exchange.getMessage().setHeader(Exchange.FILE_NAME, variableFileName.toString());
         }
     }

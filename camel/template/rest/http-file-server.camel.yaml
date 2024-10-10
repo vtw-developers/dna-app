@@ -1,0 +1,13 @@
+- route:
+    autoStartup: true
+    id: "HttpFileServer"
+    from:
+      uri: "direct:HttpFileServer"
+      steps:
+        - process:
+            ref: TemplateParametersToVariableProcessor
+        - pollEnrich:
+            simple: "file:${variable.directory}?fileName=${variable.fileName}&noop=true&idempotent=false"
+        - setHeader:
+            name: Content-Disposition
+            simple: "attachment;filename=${variable.fileName}"

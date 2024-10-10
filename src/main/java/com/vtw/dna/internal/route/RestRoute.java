@@ -9,13 +9,14 @@ import org.apache.camel.model.rest.ParamDefinition;
 import org.apache.camel.model.rest.RestDefinition;
 import org.apache.camel.model.rest.RestParamType;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-//@Component
+@Component
 public class RestRoute extends EndpointRouteBuilder {
 
     @Value("${dna.meta-directory}")
@@ -53,13 +54,20 @@ public class RestRoute extends EndpointRouteBuilder {
 
                         List<ParamDefinition> params = new ArrayList<>();
                         List<RequestParameter> requestParameters = restSpec.getRequestParameters();
-                        for (RequestParameter requestParameter : requestParameters) {
-                            ParamDefinition param = new ParamDefinition();
-                            param.setName(requestParameter.getName());
-                            param.setDataType(requestParameter.getType());
-                            param.setRequired(requestParameter.isRequired());
-                            param.setType(RestParamType.query);
-                            params.add(param);
+                        if (requestParameters != null) {
+                            for (RequestParameter requestParameter : requestParameters) {
+                                ParamDefinition param = new ParamDefinition();
+                                param.setName(requestParameter.getName());
+                                param.setDataType(requestParameter.getType());
+                                param.setRequired(requestParameter.isRequired());
+                                param.setType(RestParamType.query);
+                                params.add(param);
+                            }
+                        }
+
+                        String produces = "application/json";
+                        if (restSpec.getTemplate().getRef().contains("File")) {
+                            produces = "application/octet-stream"; // Flow ID에 "File"이 포함된 경우(임시)
                         }
 
                         RestDefinition rest = rest()
@@ -69,7 +77,7 @@ public class RestRoute extends EndpointRouteBuilder {
                                 .path(restSpec.getPath())
                                 .description(restSpec.getName())
                                 .params(params)
-                                .produces("application/json")
+                                .produces(produces)
                                 .responseMessage("200", "successful operation")
                                 .to("direct:" + restSpec.getTemplate().getRef());
                         if (restSpec.getOutType() != null) {

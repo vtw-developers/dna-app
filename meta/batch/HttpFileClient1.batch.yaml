@@ -1,0 +1,10 @@
+# 기본 정보
+id: HttpFileClient1
+name: HTTP로 파일 다운받기 1
+
+# 템플릿 정보
+template:
+  ref: HttpFileClient
+  parameters:
+    request.url: "http:localhost:8080/download/file-1"
+    download.directory: "C:/Develop/outbox"

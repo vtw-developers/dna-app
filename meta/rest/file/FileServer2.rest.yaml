@@ -1,0 +1,15 @@
+# 기본 정보
+id: FileServer2
+name: 파일 다운로드 2
+httpMethod: get
+path: /download/file-2
+
+# 부가 정보
+tag: 파일 다운로드
+
+# 템플릿 정보
+template:
+  ref: HttpFileServer
+  parameters:
+    directory: C:/Develop/inbox
+    fileName: test.txt
