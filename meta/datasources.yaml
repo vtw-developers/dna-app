@@ -1,20 +1,20 @@
 - databaseProduct: "PostgreSQL"
   name: "Portal"
-  description: ""
+  description: "포털"
   url: "jdbc:postgresql://localhost:5432/portal"
   username: "vtw"
   password: "vtw123#"
 
 - databaseProduct: "PostgreSQL"
   name: "SourceDB"
-  description: null
+  description: "소스"
   url: "jdbc:postgresql://localhost:5432/source_db"
   username: "vtw"
   password: "vtw123#"
 
 - databaseProduct: "PostgreSQL"
   name: "TargetDB"
-  description: null
+  description: "타겟"
   url: "jdbc:postgresql://localhost:5432/target_db"
   username: "vtw"
   password: "vtw123#"

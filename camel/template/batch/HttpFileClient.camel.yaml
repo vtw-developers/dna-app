@@ -1,10 +1,11 @@
 - route:
     autoStartup: true
-    id: "HttpFileDownload"
+    id: "HttpFileClient"
     from:
-      uri: "direct:HttpFileDownload"
+      uri: "direct:HttpFileClient"
       steps:
         - toD: "${variable.request.url}"
         - process:
             ref: FileNameProcessor
         - toD: "file:${variable.download.directory}"
+        - log: ${header.CamelFileName} 다운로드 완료
